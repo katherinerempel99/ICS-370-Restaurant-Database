@@ -155,26 +155,35 @@ CREATE table StoreStaff(
 );
 
 CREATE table EventItems (
-        eventID varchar(8) NOT NULL,
-        itemID varchar(8) NOT NULL,
-        quantityNeeded int,
-        FOREIGN KEY (eventID) REFERENCES Event(eventID),
-        FOREIGN KEY (itemID) REFERENCES Item(itemID)
+    eventID varchar(8) NOT NULL,
+    itemID varchar(8) NOT NULL,
+    quantityNeeded int,
+    FOREIGN KEY (eventID) REFERENCES Event(eventID),
+    FOREIGN KEY (itemID) REFERENCES Item(itemID)
 );
 
 -- create MenuItem
 CREATE table MenuItem (
     menuID varchar(8) NOT NULL,
     itemID varchar(8) NOT NULL,
-    Foreign key (menuID) references Menu(menuID)
+    Foreign key (menuID) references Menu(menuID),
+    FOREIGN KEY (itemID) REFERENCES Item(itemID)
 );
 
 
 
--- create RecipeIngredients
+-- create RecipeIngredients for linking ingredients (Items) to recipes
 CREATE table RecipeIngredients (
     recipeID varchar(8) NOT NULL,
     itemID varchar(8) NOT NULL,
     Foreign key (recipeID) references Recipe(recipeID),
     Foreign Key (itemID) REFERENCES Item(itemID)
+);
+
+-- create InquiryEvent table for linking customer submitted inquiries to staff created events
+CREATE table InquiryEvents (
+    eventID varchar(8),
+    inquiryID varchar(8),
+    FOREIGN KEY (eventID) REFERENCES Event(eventID),
+    FOREIGN KEY (inquiryID) REFERENCES Inquiry(inquiryID)
 );
