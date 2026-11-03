@@ -1,10 +1,12 @@
 USE master;
-
+GO
 -- drop Restaurant database if it already exists
 DROP DATABASE IF EXISTS Rest;
-CREATE database Rest
+GO
+CREATE database Rest;
 GO
 USE Rest;
+GO
 
 -- create Store table
 CREATE table Store (
@@ -96,8 +98,9 @@ CREATE table Inventory (
     itemID varchar(8) NOT NULL,
     storeID varchar(8) NOT NULL,
     quantity numeric(8,2) CHECK (quantity >= 0),
-    Primary key (itemID),
-    Foreign key (itemID) references Item(itemID)
+    --Primary key (itemID),
+    Foreign key (itemID) references Item(itemID),
+    Foreign key (storeID) references Store(storeID)
 );
 
 -- create Event tables
@@ -116,10 +119,9 @@ CREATE table Event (
 
 CREATE table EventDescription (
     eventID varchar(8) NOT NULL,
-    description TEXT,
+    eDescription TEXT,
     eventName varchar(64) NOT NULL,
     eLocation varchar(64),
-    PRIMARY KEY(eventID),
     FOREIGN KEY (eventID) REFERENCES Event(eventID)
 );
 
@@ -139,8 +141,7 @@ CREATE table InquiryDescription(
     firstName varchar(30) NOT NULL,
     lastName varchar(30) NOT NULL,
     IEmail varchar(50) NOT NULL,
-    description TEXT,
-    PRIMARY KEY(inquiryID),
+    iDescription TEXT,
     FOREIGN KEY (inquiryID) REFERENCES Inquiry(inquiryID)
 );
 
