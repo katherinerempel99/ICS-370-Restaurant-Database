@@ -1,10 +1,12 @@
 USE master;
-
+GO
 -- drop Restaurant database if it already exists
 DROP DATABASE IF EXISTS Rest;
-CREATE database Rest
+GO
+CREATE database Rest;
 GO
 USE Rest;
+GO
 
 -- create Store table
 CREATE table Store (
@@ -96,8 +98,9 @@ CREATE table Inventory (
     itemID varchar(8) NOT NULL,
     storeID varchar(8) NOT NULL,
     quantity numeric(8,2) CHECK (quantity >= 0),
-    Primary key (itemID),
-    Foreign key (itemID) references Item(itemID)
+    --Primary key (itemID),
+    Foreign key (itemID) references Item(itemID),
+    Foreign key (storeID) references Store(storeID)
 );
 
 -- create Event tables
@@ -116,10 +119,9 @@ CREATE table Event (
 
 CREATE table EventDescription (
     eventID varchar(8) NOT NULL,
-    description TEXT,
+    eDescription TEXT,
     eventName varchar(64) NOT NULL,
     eLocation varchar(64),
-    PRIMARY KEY(eventID),
     FOREIGN KEY (eventID) REFERENCES Event(eventID)
 );
 
@@ -139,8 +141,7 @@ CREATE table InquiryDescription(
     firstName varchar(30) NOT NULL,
     lastName varchar(30) NOT NULL,
     IEmail varchar(50) NOT NULL,
-    description TEXT,
-    PRIMARY KEY(inquiryID),
+    iDescription TEXT,
     FOREIGN KEY (inquiryID) REFERENCES Inquiry(inquiryID)
 );
 
@@ -154,26 +155,35 @@ CREATE table StoreStaff(
 );
 
 CREATE table EventItems (
-        eventID varchar(8) NOT NULL,
-        itemID varchar(8) NOT NULL,
-        quantityNeeded int,
-        FOREIGN KEY (eventID) REFERENCES Event(eventID),
-        FOREIGN KEY (itemID) REFERENCES Item(itemID)
+    eventID varchar(8) NOT NULL,
+    itemID varchar(8) NOT NULL,
+    quantityNeeded int,
+    FOREIGN KEY (eventID) REFERENCES Event(eventID),
+    FOREIGN KEY (itemID) REFERENCES Item(itemID)
 );
 
 -- create MenuItem
 CREATE table MenuItem (
     menuID varchar(8) NOT NULL,
     itemID varchar(8) NOT NULL,
-    Foreign key (menuID) references Menu(menuID)
+    Foreign key (menuID) references Menu(menuID),
+    FOREIGN KEY (itemID) REFERENCES Item(itemID)
 );
 
 
 
--- create RecipeIngredients
+-- create RecipeIngredients for linking ingredients (Items) to recipes
 CREATE table RecipeIngredients (
     recipeID varchar(8) NOT NULL,
     itemID varchar(8) NOT NULL,
     Foreign key (recipeID) references Recipe(recipeID),
     Foreign Key (itemID) REFERENCES Item(itemID)
+);
+
+-- create InquiryEvent table for linking customer submitted inquiries to staff created events
+CREATE table InquiryEvents (
+    eventID varchar(8),
+    inquiryID varchar(8),
+    FOREIGN KEY (eventID) REFERENCES Event(eventID),
+    FOREIGN KEY (inquiryID) REFERENCES Inquiry(inquiryID)
 );
