@@ -1,0 +1,22 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/Restaurant-Database/CopilotIndices/18.11.1093.4562
+/.vs/Restaurant-Database/FileContentIndex
+/.vs/Restaurant-Database/v18
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+
+# Python virtual environment
+.venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Local environment variables and secrets
+.env
+
+# Old local Django setup (team uses RestaurantManagementSite)
+/backend/
