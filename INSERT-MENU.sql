@@ -30,9 +30,9 @@ VALUES
 
 INSERT INTO Item (itemID, itemName, allergyInfo)
 VALUES
-('I00101', 'chairs', NULL),
-('I00102', 'tomato', 'tomato'),
-('I00103', 'chicken breast', 'chicken');
+('I101', 'chairs', NULL),
+('I102', 'tomato', 'tomato'),
+('I103', 'chicken breast', 'chicken');
 
 -- Menu INSERT Statements
 -- Categories reference MenuCategory IDs
