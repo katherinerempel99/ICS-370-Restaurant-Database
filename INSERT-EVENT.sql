@@ -19,15 +19,15 @@ VALUES
 ('E103', 'Funeral Private Party', 'Santiago Family Funeral', '99 Example St, Saint Paul, MN');
 
 -- EventItems insert statements
--- I00101 = chairs, I00102 = tomato, I00103 = chicken breast
+-- I101 = chairs, I102 = tomato, I103 = chicken breast
 
 INSERT INTO EventItems (eventID, itemID, quantityNeeded)
 VALUES
-('E101', 'I00101', 50),
-('E101', 'I00102', 20),
-('E101', 'I00103', 40),
-('E102', 'I00101', 30),
-('E102', 'I00102', 10),
-('E102', 'I00103', 15),
-('E103', 'I00101', 40),
-('E103', 'I00103', 20);
+('E101', 'I101', 50),
+('E101', 'I102', 20),
+('E101', 'I103', 40),
+('E102', 'I101', 30),
+('E102', 'I102', 10),
+('E102', 'I103', 15),
+('E103', 'I101', 40),
+('E103', 'I103', 20);
