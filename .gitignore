@@ -2,18 +2,17 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/Restaurant-Database/CopilotIndices/18.11.1093.4562
-/.vs/Restaurant-Database/FileContentIndex
-/.vs/Restaurant-Database/v18
-/.vs/slnx.sqlite
-/.vs/VSWorkspaceState.json
+# Local folders
+.vs
+.vscode
 
 # Python virtual environment
-.venv/
+.venv
 
 # Python cache files
-__pycache__/
+__pycache__
 *.pyc
+.pytest_cache
 
 # Local environment variables and secrets
 .env
