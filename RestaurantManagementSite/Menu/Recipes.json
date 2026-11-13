@@ -1,0 +1,26 @@
+{
+    "recipe": {
+        "id": "R101",
+        "name": "Chicken Tortellini with Alfredo",
+        "category": "Dinner",
+        "servings": 4,
+        "price": 23.99,
+        "source": "https://www.tasteofhome.com/recipes/chicken-tortellini-alfredo-2/",
+        "ingredients": [
+            {"cheese tortellini":"2 9oz packages"},
+            {"chicken breast":"2 skinless"},
+            {"salt":"1/2 tsp"},
+            {"black pepper":"1/4tsp"},
+            {"olive oil":"2tsp"},
+            {"butter":"6T butter"},
+            {"heavy whipping cream":"2 cups"},
+            {"parmesan cheese":"3/4c grated"},
+            {"romano cheese":"1/2c grated"},
+            {"nutmeg":"1/8tsp ground"},
+            {"egg yolk":"2 large"},
+            {"parsley":"minced fresh for decoration"}
+        ],
+        "instructions": "1. Cook pasta according to package directions. Meanwhile, sprinkle chicken with 1/4 teaspoon salt and 1/8 teaspoon pepper. In a large skillet, cook chicken in oil over medium heat until a thermometer reads 165°, 8-10 minutes, turning once. Remove and let stand at least 5 minutes. Cut into cubes.\n2. In the same skillet, melt butter over medium-low heat. Stir in cream, 1/2 cup Parmesan cheese, Romano cheese, nutmeg and remaining 1/4 teaspoon salt and 1/8 teaspoon pepper.\n3. In a small bowl, whisk egg yolks; stir in a small amount of hot cream mixture into egg yolks. Return all to the pan, stirring constantly. Cook and stir over medium-low heat until sauce has thickened slightly and a thermometer reads 160°.\n4. Drain pasta; serve with Alfredo sauce, chicken and remaining 1/4 cup Parmesan cheese. If desired, garnish with parsley.",
+        "nutrition facts":"1 serving: 1196 calories, 86g fat (51g saturated fat), 393mg cholesterol, 1468mg sodium, 64g carbohydrate (7g sugars, 3g fiber), 46g protein."
+    }
+}
