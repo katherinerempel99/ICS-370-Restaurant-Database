@@ -1,5 +1,6 @@
 {
-    "recipe": [{
+    "recipe": [
+        {
         "id": "R101",
         "name": "Chicken Tortellini with Alfredo",
         "category": "Dinner",
@@ -22,5 +23,82 @@
         ],
         "instructions": "1. Cook pasta according to package directions. Meanwhile, sprinkle chicken with 1/4 teaspoon salt and 1/8 teaspoon pepper. In a large skillet, cook chicken in oil over medium heat until a thermometer reads 165°, 8-10 minutes, turning once. Remove and let stand at least 5 minutes. Cut into cubes.\n2. In the same skillet, melt butter over medium-low heat. Stir in cream, 1/2 cup Parmesan cheese, Romano cheese, nutmeg and remaining 1/4 teaspoon salt and 1/8 teaspoon pepper.\n3. In a small bowl, whisk egg yolks; stir in a small amount of hot cream mixture into egg yolks. Return all to the pan, stirring constantly. Cook and stir over medium-low heat until sauce has thickened slightly and a thermometer reads 160°.\n4. Drain pasta; serve with Alfredo sauce, chicken and remaining 1/4 cup Parmesan cheese. If desired, garnish with parsley.",
         "nutrition facts":"1 serving: 1196 calories, 86g fat (51g saturated fat), 393mg cholesterol, 1468mg sodium, 64g carbohydrate (7g sugars, 3g fiber), 46g protein."
-    }]
+        },
+        {
+            "id": "R102",
+            "name": "Chicken Alfredo",
+            "category": "Dinner",
+            "servings": 6,
+            "price": 21.79,
+            "source": "https://www.allrecipes.com/recipe/276725/creamy-chicken-alfredo/",
+            "ingredients": [
+                {"chicken breast":"1 pound chunked"},
+                {"salt":"1/2 tsp"},
+                {"black pepper":"1 tsp"},
+                {"spaghetti":"1 16oz package"},
+                {"alfredo sauce":"2 15oz jars"},
+                {"Italian seasoning":"1 tsp"},
+                {"garlic powder":"1 tsp"},
+                {"onion":"1T chopped"},
+                {"basil":"1T chopped fresh"},
+                {"onion powder":"1/2 tsp"},
+                {"cayenne pepper":"1/4 tsp"},
+                {"parmesan cheese":"3/4c shredded"},
+                {"broccoli":"1 cup chopped"}
+            ],
+            "instructions": "1. Gather all ingredients. \n2. Season chicken with a pinch of salt and pepper. Heat a large skillet over medium-high heat. Add chicken and cook until no longer pink in the center and juices run clear, 7 to 10 minutes. An instant-read thermometer inserted into the thickest part should read at least 165 degrees F (74 degrees C).\n3. Bring a large pot of lightly salted water to a boil. Cook spaghetti in the boiling water, stirring occasionally, until tender yet firm to the bite, 8 to 10 minutes.\n4. Meanwhile, add Alfredo sauce to the chicken; season to taste with Italian seasoning, garlic powder, onion, basil, salt, black pepper, onion powder, and cayenne.\n5. Bring to a simmer; stir in Parmesan cheese. Cook mixture until cheese is melted and you are able to lift a spoon out of the sauce without cheese hanging onto it, 3 to 5 minutes.\n6. Place a steamer insert into a saucepan and fill with water to just below the bottom of the steamer. Bring water to a boil. Add broccoli, cover, and steam until tender, 2 to 6 minutes.\n7. [Optional] Add broccoli to sauce. \n8. Drain cooked pasta, reserving some of the cooking water. Scoop pasta into individual serving bowls and pour sauce on top. Use pasta water to thin sauce if necessary.",
+            "nutrition facts": "1 serving: 714 calories, 45g fat (27g saturated fat), 190mg cholesterol, 1011mg sodium, 35g carbohydrate (5g sugars, 1g fiber), 42g protein."          
+        },
+        {
+            "id": "",
+            "name": "",
+            "category": "",
+            "servings": 0,
+            "price": 0.00,
+            "source": "",
+            "ingredients": [
+                {"":""},
+                {"":""},
+                {"":""},
+                {"":""},
+                {"":""}
+            ],
+            "instructions": "",
+            "nutrition facts": ""          
+        },
+        {
+            "id": "",
+            "name": "",
+            "category": "",
+            "servings": 0,
+            "price": 0.00,
+            "source": "",
+            "ingredients": [
+                {"":""},
+                {"":""},
+                {"":""},
+                {"":""},
+                {"":""}
+            ],
+            "instructions": "",
+            "nutrition facts": ""          
+        },
+        {
+            "id": "",
+            "name": "",
+            "category": "",
+            "servings": 0,
+            "price": 0.00,
+            "source": "",
+            "ingredients": [
+                {"":""},
+                {"":""},
+                {"":""},
+                {"":""},
+                {"":""}
+            ],
+            "instructions": "",
+            "nutrition facts": ""          
+        }
+    ]
 }
