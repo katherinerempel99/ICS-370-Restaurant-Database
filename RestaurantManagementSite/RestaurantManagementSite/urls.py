@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("mainapp.urls")), # forward all urls into mainapps.urls so they can be handled here
     # path("",include("Login.urls")) # login web pages
+    path("",include("Menu.urls")),
 ]
