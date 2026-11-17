@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mssql',
     'mainapp',
-    'Info','Login','Inventory','Menu',
+    
 
 ]
 

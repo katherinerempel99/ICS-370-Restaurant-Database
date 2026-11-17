@@ -20,7 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("mainapp.urls")), # forward all urls into mainapps.urls so they can be handled here
-    path("menu/", include("Menu.urls")), # recipe pages
-    # path("",include("Login.urls")) # login web pages
-    path("",include("Menu.urls")),
+    # path("menu/", include("mainapp.urls")), # recipe pages
+    
 ]

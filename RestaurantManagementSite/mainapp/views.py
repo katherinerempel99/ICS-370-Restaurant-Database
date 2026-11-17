@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+import json
 
 # Create your views here.
 def home(request):
@@ -7,3 +8,10 @@ def home(request):
     # return HttpResponse("hello world!")
 
     return render(request, "home.html") # render the template, only works if templates are inside directory
+
+def recipe_detail(request):
+    with open('Recipes.json') as json_file:
+        data = json.load(json_file)
+    recipes = data['recipe']
+    context = {"recipes": recipes}
+    return render(request, "recipe.html", context)
