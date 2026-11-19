@@ -8,6 +8,8 @@ from django.shortcuts import render, redirect
 
 from .models import Item, Store
 
+from pathlib import Path
+
 
 # Home page
 def home(request):
@@ -16,7 +18,9 @@ def home(request):
 
 # Recipe details page
 def recipe_detail(request):
-    with open("Recipes.json") as json_file:
+    json_path = Path(__file__).resolve().parent / "Recipes.json"
+
+    with open(json_path, encoding="utf-8") as json_file:
         data = json.load(json_file)
 
     recipes = data["recipe"]

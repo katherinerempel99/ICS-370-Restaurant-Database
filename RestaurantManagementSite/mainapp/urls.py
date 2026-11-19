@@ -5,6 +5,6 @@ from . import views
 urlpatterns = [
     path("", views.home, name="home"), #blank goes to base URL
     # path('', views.index),
-    path('', views.recipe_detail,name="recipe"),
+    path('recipes/', views.recipe_detail, name='recipe'),
     path('inventory/', views.inventory_list, name='inventory_list'),
 ]
