@@ -14,7 +14,7 @@ def home(request):
     return render(request, "home.html") # render the template, only works if templates are inside directory
 
 def recipe_detail(request):
-    with open('Recipes.json') as json_file:
+    with open('mainapp/Recipes.json') as json_file:
         data = json.load(json_file)
     recipes = data['recipe']
     context = {"recipes": recipes}
