@@ -8,6 +8,25 @@
         <strong>{{ recipe.name }}</strong> ({{ recipe.category }})
         <br>
         Serves {{ recipe.servings }} · ${{ recipe.price }}
+        <br>
+        <strong>Ingredients:</strong>
+        <ul>
+            {% for ingredient in recipe.ingredients %}
+            {% for name, amount in ingredient.items %}
+            <li>{{ name }}</li>
+            {% endfor %}
+            {% endfor %}
+        </ul>
+        <strong>Instructions:</strong>
+        {{ recipe.instructions|linebreaks}}
+
+        <strong>Nutrition facts:</strong>
+        {% for key, value in recipe.items %}
+        {% if key == "nutrition facts" %}
+        <p>{{value}}</p>
+        {% endif %}
+        {% endfor %}
+
     </li>
     {% endfor %}
 </ul>
