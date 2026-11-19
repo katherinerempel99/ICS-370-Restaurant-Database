@@ -84,3 +84,38 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.recipename or self.recipeid
+
+
+class Store(models.Model):
+    storeid = models.CharField(
+        db_column='storeID',
+        primary_key=True,
+        max_length=8
+    )
+    address = models.CharField(
+        max_length=100,
+        blank=True,
+        null=True
+    )
+    hours = models.CharField(
+        max_length=64,
+        blank=True,
+        null=True
+    )
+    phone = models.IntegerField(
+        blank=True,
+        null=True
+    )
+    storeemail = models.CharField(
+        db_column='storeEmail',
+        max_length=50,
+        blank=True,
+        null=True
+    )
+
+    class Meta:
+        managed = False
+        db_table = 'Store'
+
+    def __str__(self):
+        return self.address or self.storeid
