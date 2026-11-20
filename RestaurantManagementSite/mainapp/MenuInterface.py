@@ -7,6 +7,10 @@ class MenuInterface(ABC):
     def add(self, Menu):
         pass
 
+    @abstractmethod
+    def remove(self, recipeID):
+        pass
+
 class RestaurantMenu(MenuInterface):
     def add(self, Menu):
         fd = open("Recipes.json", 'r')
@@ -65,20 +69,16 @@ class RestaurantMenu(MenuInterface):
         else:
             print("The Product ID you Have Entered Is Already Present in DataBase Please Check...!!!")
 
+    def remove(self, recipeID):
+        """Removes a recipe from the JSON menu."""
+        from .MenuRemove import remove_recipe
+        return remove_recipe(recipeID)
 
 if __name__ == "__main__":
     # Call the function
     my_menu = RestaurantMenu()
     my_menu.add(None)
 
-
-
-
-
-    @abstractmethod
-    def remove(self, Menu):
-        """Removes item from menu list."""
-        pass
 
 
 
@@ -136,7 +136,7 @@ if __name__ == "__main__":
             
         else:
             print("You have entered wrong product ID that is not present in database!")
-    display("R101")
+   # display("R101")
 
 
 
@@ -150,4 +150,4 @@ class Test(MenuInterface):
     def change(self, temp, p, u):
         super().change(temp, p, u)
 
-Test().change("R101", "price", 24.99)
+# Test().change("R101", "price", 24.99)
