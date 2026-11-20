@@ -1,0 +1,12 @@
+# first cd into RestaurantManagementSite (where manage.py is)
+# update migrations
+python manage.py makemigrations
+python manage.py migrate
+
+# run server
+python manage.py runserver
+ctrl + click on "http://127.0.0.1:8000/" or paste in browser
+ctrl + c on Windows to quit server
+
+# access user management page by adding "/admin" to home page
+
