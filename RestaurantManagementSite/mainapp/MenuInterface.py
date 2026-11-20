@@ -5,8 +5,71 @@ import pandas as pd
 class MenuInterface(ABC):
     @abstractmethod
     def add(self, Menu):
-        """Adds item to menu list."""
         pass
+
+class RestaurantMenu(MenuInterface):
+    def add(self, Menu):
+        fd = open("Recipes.json", 'r')
+        txt = fd.read()
+        data = json.loads(txt)
+        fd.close()
+
+        print("Enter New Product ID :- ")
+        product_id = input()
+
+        if product_id not in data.keys():
+            print("Enter Product Name :- ")
+            name = input()
+            
+            print("Enter Price of Product :- ")
+            price = input()
+            
+            print("Enter Category of Product :- ")
+            category = input()
+            
+            print("Enter Quantity of Product :- ")
+            quantity = input()
+            
+            print("Enter The Date on Which Product is Added in Inventory :- ")
+            date = input()
+            
+            data[product_id] = {
+                'name': name, 
+                'price': price,
+                'category': category, 
+                'quantity': quantity, 
+                'date': date
+            }
+            
+            print("Please Press '0' to Add New Attributes or Press '1' to Continue :- ")
+            z = int(input())
+            
+            if(z == 0):
+                print("Enter Number of New Attributes/Properties of Product :- ")
+                n = int(input())
+                
+                for i in range(n):
+                    print("Enter Attribute Name That you Want To Add :- ")
+                    nam = input()
+                    print("Enter The " + str(nam) + " of Product :- ")
+                    pro = input()
+                    data[product_id][nam] = pro
+                    
+            print("Product ID " + str(product_id) + " Added Successfully...!!!")
+            
+            js = json.dumps(data, indent=4)
+            fd = open("Recipes.json", 'w') 
+            fd.write(js)
+            fd.close()
+            
+        else:
+            print("The Product ID you Have Entered Is Already Present in DataBase Please Check...!!!")
+
+
+if __name__ == "__main__":
+    # Call the function
+    my_menu = RestaurantMenu()
+    my_menu.add(None)
 
 
 
