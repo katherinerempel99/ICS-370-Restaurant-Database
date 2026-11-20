@@ -13,10 +13,10 @@ class MenuInterface(ABC):
 
 
     @abstractmethod
-    def remove(self, Menu):
-        """Removes a menu item from the database."""
-        from .MenuRemove import remove_menu
-        return remove_menu(Menu)
+    def remove(self, recipeID):
+        """Removes a recipe from the JSON menu."""
+        from .MenuRemove import remove_recipe
+        return remove_recipe(recipeID)
 
 
 
@@ -53,7 +53,7 @@ class MenuInterface(ABC):
             
         else:
             print("You have entered wrong product ID that is not present in database!")
-    display("R101")
+   # display("R101")
 
 
 

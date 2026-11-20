@@ -5,6 +5,8 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.views.decorators.http import require_POST
 from django.contrib.auth.decorators import user_passes_test
+import json
+from pathlib import Path
 
 def remove_menu(menu_id):
     """
@@ -73,3 +75,25 @@ def remove_menu_view(request, menu_id):
         messages.error(request, "Unable to remove the menu item.")
 
     return redirect("menu_list")
+    
+def remove_recipe(recipe_id, file_path=None):
+    """Remove a recipe from Recipes.json by its ID."""
+
+    if file_path is None:
+        file_path = Path(__file__).resolve().parent / "Recipes.json"
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    recipes = data["recipe"]
+
+    for recipe in recipes:
+        if recipe["id"] == recipe_id:
+            recipes.remove(recipe)
+
+            with open(file_path, "w", encoding="utf-8") as file:
+                json.dump(data, file, indent=4, ensure_ascii=False)
+
+            return True
+
+    return False

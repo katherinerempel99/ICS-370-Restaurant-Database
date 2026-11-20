@@ -7,7 +7,11 @@ from django.http import HttpResponse
 from django.test import RequestFactory
 
 from .MenuRemove import remove_menu, remove_menu_view
+import json
+import tempfile
+from pathlib import Path
 
+from .MenuRemove import remove_recipe
 
 class MenuRemoveTests(TestCase):
     """Tests for the Menu removal database logic."""
@@ -156,3 +160,58 @@ class MenuRemoveViewTests(TestCase):
 
         self.assertEqual(response.status_code, 302)
         mock_remove.assert_not_called()
+
+class MenuRemoveJSONTests(TestCase):
+    """Tests for removing recipes from JSON."""
+
+    def test_remove_existing_recipe(self):
+        with tempfile.TemporaryDirectory() as folder:
+            file_path = Path(folder) / "Recipes.json"
+
+            data = {
+                "recipe": [
+                    {"id": "R101", "name": "Chicken Alfredo"},
+                    {"id": "R102", "name": "Beef Tacos"}
+                ]
+            }
+
+            file_path.write_text(
+                json.dumps(data),
+                encoding="utf-8"
+            )
+
+            result = remove_recipe("R101", file_path)
+
+            self.assertTrue(result)
+
+            updated = json.loads(
+                file_path.read_text(encoding="utf-8")
+            )
+
+            self.assertEqual(len(updated["recipe"]), 1)
+            self.assertEqual(updated["recipe"][0]["id"], "R102")
+
+    def test_remove_nonexistent_recipe(self):
+        with tempfile.TemporaryDirectory() as folder:
+            file_path = Path(folder) / "Recipes.json"
+
+            data = {
+                "recipe": [
+                    {"id": "R101", "name": "Chicken Alfredo"}
+                ]
+            }
+
+            file_path.write_text(
+                json.dumps(data),
+                encoding="utf-8"
+            )
+
+            result = remove_recipe("R999", file_path)
+
+            self.assertFalse(result)
+
+            updated = json.loads(
+                file_path.read_text(encoding="utf-8")
+            )
+
+            self.assertEqual(len(updated["recipe"]), 1)
