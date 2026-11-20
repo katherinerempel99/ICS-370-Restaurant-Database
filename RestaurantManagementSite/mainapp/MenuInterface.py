@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+import json
+import pandas as pd
 
 class MenuInterface(ABC):
     @abstractmethod
@@ -32,7 +34,11 @@ class MenuInterface(ABC):
     @abstractmethod
     def display(self, Menu):
         """Displays menu item's name, price"""
-        import json
-        import pandas as pd
+        fd = open("Recipes.json","r") # Open file in read mode
+        txt = fd.read() # reading data from file
+        data = json.loads(txt)
+
+        # Parse JSON data and populate a Python dictionary with the data
+        
 
 
