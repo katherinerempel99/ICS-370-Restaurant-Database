@@ -14,8 +14,9 @@ class MenuInterface(ABC):
 
     @abstractmethod
     def remove(self, Menu):
-        """Removes item from menu list."""
-        pass
+        """Removes a menu item from the database."""
+        from .MenuRemove import remove_menu
+        return remove_menu(Menu)
 
 
 
