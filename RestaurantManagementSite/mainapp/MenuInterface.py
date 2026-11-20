@@ -88,4 +88,4 @@ class Test(MenuInterface):
     def change(self, temp, p, u):
         super().change(temp, p, u)
 
-Test().change("R101", "price", 24.99)
+#Test().change("R101", "price", 24.99)
