@@ -35,9 +35,9 @@ class MenuInterface(ABC):
             if recipe["id"] == temp:
                 if p in recipe.keys():
                     recipe[p] = u
-                    print("Product ID " + str(temp) + "'s attriubute " + str(p) + "is Updated Successfully")
+                    print("Product ID " + str(temp) + "'s attribute " + str(p) + "is Updated Successfully")
                 else: 
-                     print("Invalid Productattribute")
+                    print("Invalid Product attribute")
                 break
         else:
             print("Invalid Product ID")
