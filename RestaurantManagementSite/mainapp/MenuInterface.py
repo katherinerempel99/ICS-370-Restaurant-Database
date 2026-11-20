@@ -4,15 +4,7 @@ import pandas as pd
 
 class MenuInterface(ABC):
     @abstractmethod
-    def add(self, Menu):
-        pass
-
-    @abstractmethod
-    def remove(self, recipeID):
-        pass
-
-class RestaurantMenu(MenuInterface):
-    def add(self, Menu):
+    def add():
         fd = open("Recipes.json", 'r')
         txt = fd.read()
         data = json.loads(txt)
@@ -69,26 +61,16 @@ class RestaurantMenu(MenuInterface):
         else:
             print("The Product ID you Have Entered Is Already Present in DataBase Please Check...!!!")
 
+    @abstractmethod
     def remove(self, recipeID):
         """Removes a recipe from the JSON menu."""
         from .MenuRemove import remove_recipe
         return remove_recipe(recipeID)
 
-if __name__ == "__main__":
-    # Call the function
-    my_menu = RestaurantMenu()
-    my_menu.add(None)
-
-
-
-
-
-
-
+    
     @abstractmethod
     def change(self, temp, p, u ):
         """Changes item in menu list."""
-        import json
         fd = open("Recipes.json","r") # Open file in read mode
         txt = fd.read() # reading data from file
         data = json.loads(txt)
@@ -109,10 +91,6 @@ if __name__ == "__main__":
         fd = open("Recipes.json","w") # Open file in write mode
         fd.write(js) # writing data to file
         fd.close()
-
-
-
-
 
 
     @abstractmethod
@@ -136,11 +114,7 @@ if __name__ == "__main__":
             
         else:
             print("You have entered wrong product ID that is not present in database!")
-   # display("R101")
-
-
-
-
+    # display("R101")
 
 
 class Test(MenuInterface):
